@@ -1,0 +1,37 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+
+.background-custom {
+    background: #A7D0CD;
+    
+    }
+
+.confirm-payment{
+    text-decoration: none;
+    background-color: white;
+    
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+.confirm-payment a{
+    text-decoration: none;
+    color: black;
+}
+
+.confirm-payment:hover{
+    background-color: #A7D0CD;
+}
+
+.confirm-payment a:hover{
+    color: black;
+}
