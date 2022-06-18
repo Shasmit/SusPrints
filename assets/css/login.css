@@ -193,7 +193,17 @@ body{
     text-align: center;
 }
 
+
+/* responsive media queries */
 @media (max-height:540px) {
+
+    body{
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
     .login-container {
         position: relative;
         top: 0%;
@@ -205,6 +215,14 @@ body{
 
 
 @media (max-width:960px) {
+
+    body{
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
     .login-container {
         position: relative;
         top: 20%;
@@ -227,6 +245,14 @@ body{
 
 
 @media (max-width:370px) {
+
+    body{
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
     .login-container {
         position: relative;
         top: 20vs;
