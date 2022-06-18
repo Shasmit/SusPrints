@@ -16,6 +16,8 @@ body{
     overflow-x: hidden;
 }
 
+-webkit-scrollbar { display: none; }
+
 .login-container{
     position: absolute;
     top: 50%;
