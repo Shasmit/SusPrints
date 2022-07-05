@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Products Description</title>
+
+    <link rel="stylesheet" href="/assets/css/products.css">
+    <!-- Vendor Script -->
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="imgBx">
+            <img src="/assets/images/slider/saitama.png" alt="Saitama shoes">
+        </div>
+        <div class="details">
+            <div class="content">
+                <h2>Saitama's "OK" sticker<br>
+                    <span>Most selling collection</span>
+                </h2>
+                <p>
+                    The main protagonist of the series and the titular One-Punch Man, Saitama saying 'OK' to Boros the leader of the Dark Matter Thieves
+
+                </p>
+                <p class="product-colors">Available Size :
+                    <span class="active">M</span>
+                    <span>L</span>
+                    <span>XL</span>
+                </p>
+                <h3>Rs. 150</h3>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(".product-colors span").click(function() {
+            $(".product-colors span").removeClass("active");
+            $(this).addClass("active");
+        });
+    </script>
+
+</body>
+
+</html>
