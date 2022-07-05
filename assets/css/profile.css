@@ -1,0 +1,52 @@
+
+
+html{
+    background-color: #e5e5f7;
+    opacity: 1;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 7px ), repeating-linear-gradient( #64C9CF55, #64C9CF );
+    height: 100vh;
+}
+body {
+    background-color: #e5e5f7;
+    opacity: 1;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 7px ), repeating-linear-gradient( #64C9CF55, #64C9CF );
+    
+}
+.container{
+    box-shadow: 2px 2px 4px 4px rgba(8, 8, 8, 0.3);
+    margin-top: 35px;
+}
+.form-control:focus {
+    box-shadow: none;
+    border-color: #64C9CF;
+}
+
+.profile-button {
+    background: #64C9CF;
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background:#4a8d91;
+}
+
+.profile-button:focus {
+    background: #64C9CF;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #4a8d91;
+    box-shadow: none
+}
+
+
+.labels {
+    font-size: 12px;
+}
+
+.profile-image{
+    color:#4a8d91;
+    text-align: center;
+}
