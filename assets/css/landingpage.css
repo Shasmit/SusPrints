@@ -16,17 +16,6 @@ body {
      height: 100vh;
 }
 
-a {
-     color: #1f1f1f;
-     text-decoration: none !important;
-     outline: none !important;
-     -webkit-transition: all .3s ease-in-out;
-     -moz-transition: all .3s ease-in-out;
-     -ms-transition: all .3s ease-in-out;
-     -o-transition: all .3s ease-in-out;
-     transition: all .3s ease-in-out;
-}
-
 h1 {
      font-size: 24px;
      font-family: 'Baloo Chettan', cursive;
@@ -49,10 +38,6 @@ h1 {
      box-sizing: border-box;
 }
 
-button:focus {
-     outline: none;
-}
-
 p {
      margin: 0px;
      font-weight: 300;
@@ -66,8 +51,7 @@ a {
      outline: none !important;
 }
 
-a,
-.btn {
+a{
      text-decoration: none !important;
      outline: none !important;
      -webkit-transition: all .3s ease-in-out;
@@ -122,7 +106,7 @@ img {
     padding: 40px 0;
 }
 
-.text-bg a {
+.anchor a {
     font-size: 17px;
     background-color: #fff;
     color: #0891f8;
@@ -139,7 +123,8 @@ img {
     background-color: black;
     color: white;
 }
-.text-bg a:hover {
+
+.anchor a:hover {
     background-color: #000;
     color: #fff;
     transition: ease-in all 0.5s;
@@ -175,6 +160,8 @@ img {
         font-size: 36px;
         line-height: 59px;
     }
+    
+    
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -182,16 +169,29 @@ img {
         padding-top: 0px;
         font-size: 28px;
         line-height: 38px;
+        margin-left: 100px;
+    }
+
+    .text-bg p{
+        margin-left: 100px;
+    }
+    
+    .anchor{
+        margin-left: 100px;
     }
     .text-bg {
         padding-right: 108px;
     }
     .banner_main {
-        padding: 30px 0 190px 0;
+        padding: 30px 0 190px 100px;
+        
     }
     .text-bg{
         padding-left: 0;
         margin-right: 300px;
+    }
+    figure{
+        height: 200px;
     }
 }
 
@@ -205,8 +205,12 @@ img {
     .text-bg {
         padding-right: 0;
     }
+    
     .text-img {
         padding-top: 30px;
+    }
+    figure{
+        height: 100px;
     }
 }
 
@@ -227,6 +231,9 @@ img {
     
     .banner_main {
     padding: 20px 0 170px 0;
+    }
+    figure{
+        height: 200px;
     }
 
     
