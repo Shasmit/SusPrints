@@ -1,0 +1,303 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    background: url('../../images/bg-image/login-bg.jpg') no-repeat ;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.register-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-sizing: border-box;
+    height: auto;
+    box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+.register-container .forms{
+    display: flex;
+    align-items: center;
+    height:550px;
+    width: 200%;
+    transition: height 0.2s ease;
+}
+
+
+.register-container .form{
+    width: 50%;
+    padding: 20px;
+    background-color: #fff;
+    transition: margin-left 0.18s ease;
+}
+
+.register-container.active .login{
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.register-container.active .forms{
+    height: 600px;
+}
+.register-container .form .title{
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.form .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: #64C9CF;
+    border-radius: 25px;
+}
+
+.form .input-field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.input-field input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid){
+    border-bottom-color: #64C9CF;
+}
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+    color: #64C9CF;
+}
+
+.input-field i.icon{
+    left: 0;
+}
+.input-field i.showHidePw{
+    right: 0;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.form .checkbox-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content{
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-content .text{
+    margin-top: 3px;
+}
+
+.checkbox-content .text:hover{
+    font-size: 13px;
+}
+
+.checkbox-content input{
+    margin: 0 8px -2px 4px;
+    accent-color: #64C9CF;
+}
+
+.form .text{
+    color: #333;
+    font-size: 14px;
+}
+
+.form a.text{
+    color: #64C9CF;
+    text-decoration: none;
+}
+
+.form a:hover{
+    text-decoration: underline;
+    font-size: 16px;
+    color: #4070f4;
+}
+
+.form .button{
+    margin-top: 30px;
+}
+
+.form .button input{
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #64C9CF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button input:hover{
+    background-color: #4871e2;
+}
+
+.form .login-signup{
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+
+@media (max-height:540px) {
+    .register-container {
+        position: relative;
+        top: 0%;
+        left: 0%;
+        transform: none;
+        margin: 1.5rem 20px;
+    }
+}
+
+
+@media (max-width:960px) {
+    .register-container {
+        position: relative;
+        top: 8%;
+        left: 0%;
+        transform: none;
+        width: 400px;
+        /* max-width: 430px;
+        width: 90%; */
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    .register-container .form {
+        padding: 20px;
+    }
+}
+
+
+
+@media (max-width:370px) {
+    .register-container {
+        position: relative;
+        top: 20vs;
+        left: 0%;
+        transform: none;
+        max-width: 400px;
+        width: 90%;
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    
+.form .checkbox-text{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.forgot-text{
+    margin: 20px auto 0;
+}
+
+
+    .register-container .form {
+        padding: 20px;
+    }
+}
+
+
+
+
+
+/* .loginform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginform h1{
+    margin: 10px 0 15px 0;
+    font-weight: 800;
+}
+.loginform p{
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+.username-register-container{
+    padding: 20px 0;
+}
+.username-register-container .u-name{
+    padding: 10px 20px;
+    width: 300px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid gray;
+    outline: none;  
+}
+.u-name::placeholder{
+    color: lightcoral;
+}
+.password-register-container{
+    padding: 0 0 20px 0;
+}
+.password-register-container .passcode{
+    padding: 10px 20px;
+    width: 300px;
+    
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid gray;
+    outline: none; 
+}
+.passcode::placeholder{
+    color: lightcoral;
+}
+ */

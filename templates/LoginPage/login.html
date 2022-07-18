@@ -10,13 +10,13 @@
     <title>SusPrints | Login</title>
 
     <!-- login css -->
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/Login/login.css') }}">
 
     <!-- for icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     <!-- For favicon png -->
-	<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+    <link rel="shortcut icon" type="image/icon" href="{{ url_for('static',filename='/logo/favicon.png') }}">
 
 </head>
 
@@ -26,39 +26,43 @@
             <div class="form login">
                 <span class="title">Login</span>
 
-                <form action="#">
+                <form action="" method ="POST">
+                    {{form_login.hidden_tag()}}
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email" required>
+                        {{form_login.email(placeholder="Enter your email")}}
+                        <!-- <input type="text" placeholder="Enter your email" required> -->
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Enter your password" required>
+                        {{form_login.password(class="password",placeholder="Enter your password" )}}
+                        <!-- <input type="password" class="password" placeholder="Enter your password" required> -->
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
 
-                    <div class="checkbox-text">
+                    <!-- <div class="checkbox-text">
                         <div class="checkbox-content">
                             <input type="checkbox" id="logCheck">
                             <label for="logCheck" class="text">Remember me</label>
                         </div>
                         
                         <a href="#" class="text forgot-text">Forgot password?</a>
-                    </div>
+                    </div> -->
 
                     <div class="input-field button">
-                        <input type="button" value="Login">
+                        {{form_login.submit(value="Login")}}
+                        <!-- <input type="button" value="Login"> -->
                     </div>
                 </form>
 
                 <div class="login-signup">
                     <span class="text">Not a member?
-                        <a href="/register.html" class="text signup-link">Signup Now</a>
+                        <a href="/register" class="text signup-link">Signup Now</a>
                     </span>
                 </div>
             </div>
     </div>
-    <script src="/assets/js/login.js"></script>
+    <script src="{{ url_for('static',filename='/js/login.js') }}"></script>
 </body>
 </html>
 

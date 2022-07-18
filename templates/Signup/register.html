@@ -10,12 +10,13 @@
 
      <!-- signup css -->
     <link rel="stylesheet" href="/assets/css/register.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/Signup/register.css') }}">
 
      <!-- for icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     
     <!-- For favicon png -->
-	<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+	<link rel="shortcut icon" type="image/icon" href="{{ url_for('static',filename='/logo/favicon.png') }}">
 
 </head>
 <body>
@@ -25,46 +26,50 @@
             <div class="form signup">
                 <span class="title">Registration</span>
 
-                <form action="#">
+                <form method="POST", action="">
+                    {{form_signup.hidden_tag()}}
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your name" required>
+                        {{form_signup.username(placeholder="Enter your name")}}
                         <i class="uil uil-user"></i>
                     </div>
                     <div class="input-field">
-                        <input type="text" placeholder="Enter your email" required>
+                        {{form_signup.email(placeholder="Enter your email")}}
+                        <!-- <input type="text" placeholder="Enter your email" required> -->
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Create a password" required>
+                        {{form_signup.password(class="password",placeholder="Create a password")}}
+                        <!-- <input type="password" class="password" placeholder="Create a password" required> -->
                         <i class="uil uil-lock icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Confirm a password" required>
+                        {{form_signup.cpassword(class="password",placeholder="Confirm a password")}}
+                        <!-- <input type="password" class="password" placeholder="Confirm a password" required> -->
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
 
-                    <div class="checkbox-text">
+                    <!-- <div class="checkbox-text">
                         <div class="checkbox-content">
                             <input type="checkbox" id="termCon">
                             <label for="termCon" class="text">I accept all terms and conditions</label>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="input-field button">
-                        <input type="button" value="Signup">
+                        {{form_signup.submit(value="Signup")}}
                     </div>
                 </form>
 
                 <div class="login-signup">
                     <span class="text">Already a member?
-                        <a href="/login.html" class="text login-link">Login Now</a>
+                        <a href="/login" class="text login-link">Login Now</a>
                     </span>
                 </div>
             </div>
         </div>
     </div>
-    <script src="/assets/js/login.js"></script>
+    <script src="{{ url_for('static',filename='/js/login.js') }}"></script>
 </body>
 </html>
 

@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SusPrints</title>
-    <link rel="stylesheet" href="/assets/css/landingpage.css">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/assets/css/landingpage.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/LandingPage/landingpage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='/bootstraps/bootstrap.min.css') }}">
+
     <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
     
 </head>
@@ -25,14 +28,14 @@
                             So, Otakus do join us in our Journey...
                           </p>
                           <div class="anchor">
-                            <a href="/login.html">Login</a>
-                            <a href="/register.html" class="signup-a">SignUp</a>
+                            <a href="/login">Login</a>
+                            <a href="/register" class="signup-a">SignUp</a>
                           </div>
                        </div>
                     </div>
                     <div class="col-md-6">
                        <div class="text-img">
-                          <figure><img src="/assets/images/bg-image/box_img.png" alt="#"/></figure>
+                          <figure><img src="/static/images/bg-image/box_img.png" alt="#"/></figure>
                        </div>
                     </div>
                  </div>
@@ -40,7 +43,8 @@
            </section>
         </div>
      </header>
-     <script src="/assets/js/bootstrap.min.js"></script>
-     <script src="/assets/js/jquery.js"></script>
+      <script src="{{ url_for('static',filename='/js/bootstrap.min.js') }}"></script>
+      <script src="{{ url_for('static',filename='/js/jquery.js') }}"></script>
+
 </body>
 </html>
