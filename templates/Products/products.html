@@ -23,23 +23,23 @@
 
     <div class="container">
         <div class="imgBx">
-            <img src="{{ url_for('static',filename='images/slider/saitama.png') }}" alt="Saitama shoes">
+            <img src="{{ url_for('static',filename='Assets/userimage/'+desc.image) }}" alt="Saitama shoes">
         </div>
         <div class="details">
             <div class="content">
-                <h2>Saitama's "OK" sticker<br>
+                <h2>{{desc.title}}<br>
                     <span>Most selling collection</span>
                 </h2>
                 <p>
-                    The main protagonist of the series and the titular One-Punch Man, Saitama saying 'OK' to Boros the leader of the Dark Matter Thieves
-
+                    {{desc.description}}
                 </p>
-                <p class="product-colors">Available Size :
+                <p class="product-colors">
+                    Available Size :
                     <span class="active">M</span>
                     <span>L</span>
                     <span>XL</span>
                 </p>
-                <h3>Rs. 150</h3>
+                <h3>Rs. {{desc.price}}</h3>
                 <button>Buy Now</button>
             </div>
         </div>

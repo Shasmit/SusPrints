@@ -1,6 +1,8 @@
+from itertools import product
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import FileField, StringField, PasswordField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from flask_wtf.file import FileRequired, FileAllowed
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username',validators=[DataRequired(),Length(min=2,max=20)])
@@ -13,3 +15,14 @@ class LoginForm(FlaskForm):
     email = StringField('Email',validators=[DataRequired(),Email()])
     password = PasswordField('Password',validators=[DataRequired()])
     submit = SubmitField('Login')
+
+class ProductForm(FlaskForm):
+    title = StringField('Title',validators=[DataRequired()])
+    description = TextAreaField('Description',validators=[DataRequired()])
+    image = FileField('Image',validators=[FileAllowed(["png",'jpg'])])
+    price = StringField('Price',validators=[DataRequired()])
+    submit = SubmitField('Add Product')
+    productType = StringField('Product Type')
+    discountPrice = StringField('Discount Price')
+
+

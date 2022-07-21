@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+.Hidden{
+    display: none !important;
+}
+.navbar{
+    background: transparent;
+}
+
+.navbar-brand{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.offcanvas-title{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.navbar-brand span{
+    color: #64C9CF;
+    font-weight: 700px;
+}
+
+.offcanvas-title span{
+    color: #64C9CF;
+    font-weight: 700px;
+}
+
+.offcanvas-header button{
+    color: #64C9CF;
+}
+
+.dropdown span{
+    color: #64C9CF;
+    font-size: 20px;
+}
+
+.dropdown-item span{
+    margin-right: 10px;
+}
+
+.details-container{
+    margin: 60px auto 0 auto;   
+    padding: 20px 70px 0 70px;
+}
+
+.onSelect{
+    display: none;
+}

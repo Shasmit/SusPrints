@@ -63,13 +63,19 @@ def Login():
         ):
             login_user(user, remember=True)
             next_page = request.args.get("next")
-            return (
-                redirect(next_page)
-                if next_page
-                else redirect(url_for("views.home"))
-            )
+            if (current_user.username == "Admin"):
+                print("hasjkdhkjahsjkdhjkashdjkash")
+                return redirect(url_for("admin.dashboard"))
+            else:
+                return (
+                    redirect(next_page)
+                    if next_page
+                    else redirect(url_for("views.home"))
+                )
         else:
             flash("Login Unsuccessful. Please check email and password", "danger")
+
+    
     return render_template(
         "LoginPage/login.html",
         title="Login",

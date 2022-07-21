@@ -84,22 +84,23 @@
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-txt">
 													<h4>Most selling collection</h4>
-													<h2>Saitama's "OK" sticker</h2>
+
+													<h2>{{mostselling[0].title}}</h2>
 													<p>
-														The main protagonist of the series and the titular One-Punch Man, Saitama saying 'OK' to Boros the leader of the Dark Matter Thieves
+														{{mostselling[0].description}}
 													</p>
 													<div class="packages-price">
 														<p>
-															RS. 150
-															<del>RS. 250</del>
+															Rs. {{mostselling[0].discount}}
+															<del> Rs. {{mostselling[0].price}}</del>
 														</p>
 													</div>
 													<button class="btn-cart welcome-add-cart" onclick="window.location.href='#'">
 														<span class="lnr lnr-plus-circle"></span>
 														add <span>to</span> cart
 													</button>
-													<button class="btn-cart welcome-add-cart welcome-more-info" onclick="window.location.href='/Products'">
-														more info
+													<button> 
+														<a href="/MostSelling/{{mostselling[0].title}}" class="btn-cart welcome-add-cart welcome-more-info">more info</a>	
 													</button>
 												</div><!--/.welcome-hero-txt-->
 											</div><!--/.single-welcome-hero-->
@@ -107,7 +108,7 @@
 										<div class="col-sm-5">
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-img">
-													<img src="{{ url_for('static',filename='images/slider/saitama.png') }}" alt="slider image">
+													<img src="{{ url_for('static',filename='Assets/userimage/'+mostselling[0].image) }}" alt="slider image">
 												</div><!--/.welcome-hero-txt-->
 											</div><!--/.single-welcome-hero-->
 										</div><!--/.col-->
@@ -127,22 +128,22 @@
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-txt">
 													<h4>Most selling collection</h4>
-													<h2>MOB PSYCH-100 leather wallet</h2>
+													<h2>{{mostselling[1].title}}</h2>
 													<p>
-														Your own favourite Mob Psych-100s Shigeo Kageyama and Reigen Arataka's face printed leather wallet.
+														{{mostselling[1].description}}
 													</p>
 													<div class="packages-price">
 														<p>
-															RS. 550
-															<del>RS. 880</del>
+															{{mostselling[1].discount}}
+															<del>{{mostselling[1].price}}</del>
 														</p>
 													</div>
 													<button class="btn-cart welcome-add-cart" onclick="window.location.href='#'">
 														<span class="lnr lnr-plus-circle"></span>
 														add <span>to</span> cart
 													</button>
-													<button class="btn-cart welcome-add-cart welcome-more-info" onclick="window.location.href='/Products'">
-														more info
+													<button> 
+														<a href="/MostSelling/{{mostselling[1].title}}" class="btn-cart welcome-add-cart welcome-more-info">more info</a>	
 													</button>
 												</div><!--/.welcome-hero-txt-->
 											</div><!--/.single-welcome-hero-->
@@ -150,7 +151,7 @@
 										<div class="col-sm-5">
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-img">
-													<img src="{{ url_for('static',filename='images/slider/saitama2.png') }}" alt="slider image">
+													<img src="{{ url_for('static',filename='Assets/userimage/'+mostselling[1].image) }}" alt="slider image">
 												</div><!--/.welcome-hero-txt-->
 											</div><!--/.single-welcome-hero-->
 										</div><!--/.col-->
@@ -159,7 +160,9 @@
 							</div><!-- /.container-->
 						</div><!-- /.single-slide-item-->
 
-					</div><!-- /.item .active-->
+					</div>
+					
+					<!-- /.item .active-->
 
 					<div class="item">
 						<div class="single-slide-item slide3">
@@ -170,22 +173,22 @@
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-txt">
 													<h4>Most selling collection</h4>
-													<h2>The Thousand Sunny plastic model</h2>
+													<h2>{{mostselling[2].title}}</h2>
 													<p>
-														The plastic mini-model of the famous ship of The Straw Hat Pirates from the anime One-piece. But it now for the best price you'll get ever!!!
+														{{mostselling[2].description}}
 													</p>
 													<div class="packages-price">
 														<p>
-															RS. 700
-															<del>RS. 1180</del>
+															RS. {{mostselling[2].discount}}
+															<del>RS. {{mostselling[2].price}}</del>
 														</p>
 													</div>
 													<button class="btn-cart welcome-add-cart" onclick="window.location.href='#'">
 														<span class="lnr lnr-plus-circle"></span>
 														add <span>to</span> cart
 													</button>
-													<button class="btn-cart welcome-add-cart welcome-more-info" onclick="window.location.href='/Products'">
-														more info
+													<button> 
+														<a href="/MostSelling/{{mostselling[2].title}}" class="btn-cart welcome-add-cart welcome-more-info">more info</a>	
 													</button>
 												</div><!--/.welcome-hero-txt-->
 											</div><!--/.single-welcome-hero-->
@@ -193,7 +196,7 @@
 										<div class="col-sm-5">
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-img">
-													<img src="{{ url_for('static',filename='images/slider/saitama3.png') }}" alt="slider image">
+													<img src="{{ url_for('static',filename='Assets/userimage/'+mostselling[2].image) }}" alt="slider image">
 												</div><!--/.welcome-hero-txt-->
 											</div><!--/.single-welcome-hero-->
 										</div><!--/.col-->
@@ -278,7 +281,7 @@
 				                            </li><!--/.single-cart-list -->
 				                            <li class="total">
 				                                <span>Total: $0.00</span>
-				                                <button class="btn-cart pull-right"><a href="/cart.html"> view cart</a></button>
+				                                <button class="btn-cart pull-right"><a href="/Cart"> view cart</a></button>
 				                            </li>
 				                        </ul>
 				                    </li><!--/.dropdown-->
@@ -291,7 +294,7 @@
 				                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
 				                    <i class="fa fa-bars"></i>
 				                </button>
-				                <a class="navbar-brand" href="index.html">sus<span>prints</span></a>
+				                <a class="navbar-brand" href="/home">sus<span>prints</span></a>
 
 				            </div><!--/.navbar-header-->
 				            <!-- End Header Navigation -->
@@ -327,10 +330,14 @@
 				</div><!--/.section-header-->
 				<div class="new-arrivals-content">
 					<div class="row">
+						{%if newarrival == []%}
+							<h1>No Products</h1>
+							{%else%}
+							{%for product in newarrival%}
 						<div class="col-md-3 col-sm-4">
 							<div class="single-new-arrival">
 								<div class="single-new-arrival-bg">
-									<img src="{{ url_for('static',filename='images/collection/arrivals1.png') }}" alt="new-arrivals images">
+									<img src="{{ url_for('static',filename='Assets/userimage/'+product.image) }}" alt="new-arrivals images">
 									<div class="single-new-arrival-bg-overlay"></div>
 									<!-- <div class="sale bg-1">
 										<p>sale</p>
@@ -342,166 +349,17 @@
 										</p>
 										<p class="arrival-review pull-right">
 											<!-- <span class="lnr lnr-heart"></span> -->
-											<span class="lnr lnr-frame-expand"></span>
+											<a href="/NewArrivals/{{product.title}}"><span class="lnr lnr-frame-expand"></span></a>
 										</p>
 									</div>
 								</div>
-								<h4><a href="#">Zoro Print Hoodie</a></h4>
-								<p class="arrival-product-price">RS. 1050</p>
+								<h4><a href="#">{{product.title}}</a></h4>
+								<p class="arrival-product-price">Rs.{{product.price}}</p>
 							</div>
 						</div>
-						<div class="col-md-3 col-sm-4">
-							<div class="single-new-arrival">
-								<div class="single-new-arrival-bg">
-									<img src="{{ url_for('static',filename='images/collection/arrivals2.png') }}" alt="new-arrivals images">
-									<div class="single-new-arrival-bg-overlay"></div>
-									<!-- <div class="sale bg-2">
-										<p>sale</p>
-									</div> -->
-									<div class="new-arrival-cart">
-										<p>
-											<span class="lnr lnr-cart"></span>
-											<a href="#">add <span>to </span> cart</a>
-										</p>
-										<p class="arrival-review pull-right">
-											<!-- <span class="lnr lnr-heart"></span> -->
-											<span class="lnr lnr-frame-expand"></span>
-										</p>
-									</div>
-								</div>
-								<h4><a href="#">SpyxFamily T-shirt</a></h4>
-								<p class="arrival-product-price">RS. 750</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-4">
-							<div class="single-new-arrival">
-								<div class="single-new-arrival-bg">
-									<img src="{{ url_for('static',filename='images/collection/arrivals3.png') }}" alt="new-arrivals images">
-									<div class="single-new-arrival-bg-overlay"></div>
-									<div class="new-arrival-cart">
-										<p>
-											<span class="lnr lnr-cart"></span>
-											<a href="#">add <span>to </span> cart</a>
-										</p>
-										<p class="arrival-review pull-right">
-											<!-- <span class="lnr lnr-heart"></span> -->
-											<span class="lnr lnr-frame-expand"></span>
-										</p>
-									</div>
-								</div>
-								<h4><a href="#">Tanjiro's Haori</a></h4>
-								<p class="arrival-product-price">RS. 800</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-4">
-							<div class="single-new-arrival">
-								<div class="single-new-arrival-bg">
-									<img src="{{ url_for('static',filename='images/collection/arrivals4.png') }}" alt="new-arrivals images">
-									<div class="single-new-arrival-bg-overlay"></div>
-									<!-- <div class="sale bg-1">
-										<p>sale</p>
-									</div> -->
-									<div class="new-arrival-cart">
-										<p>
-											<span class="lnr lnr-cart"></span>
-											<a href="#">add <span>to </span> cart</a>
-										</p>
-										<p class="arrival-review pull-right">
-											<!-- <span class="lnr lnr-heart"></span> -->
-											<span class="lnr lnr-frame-expand"></span>
-										</p>
-									</div>
-								</div>
-								<h4><a href="#">Mob Psych print Mug</a></h4>
-								<p class="arrival-product-price">RS. 350</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-4">
-							<div class="single-new-arrival">
-								<div class="single-new-arrival-bg">
-									<img src="{{ url_for('static',filename='images/collection/arrivals5.png') }}" alt="new-arrivals images">
-									<div class="single-new-arrival-bg-overlay"></div>
-									<div class="new-arrival-cart">
-										<p>
-											<span class="lnr lnr-cart"></span>
-											<a href="#">add <span>to </span> cart</a>
-										</p>
-										<p class="arrival-review pull-right">
-											<!-- <span class="lnr lnr-heart"></span> -->
-											<span class="lnr lnr-frame-expand"></span>
-										</p>
-									</div>
-								</div>
-								<h4><a href="#">JOJO T-shirt</a></h4>
-								<p class="arrival-product-price">RS. 750</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-4">
-							<div class="single-new-arrival">
-								<div class="single-new-arrival-bg">
-									<img src="{{ url_for('static',filename='images/collection/arrivals6.png') }}" alt="new-arrivals images">
-									<div class="single-new-arrival-bg-overlay"></div>
-									<!-- <div class="sale bg-1">
-										<p>sale</p>
-									</div> -->
-									<div class="new-arrival-cart">
-										<p>
-											<span class="lnr lnr-cart"></span>
-											<a href="#">add <span>to </span> cart</a>
-										</p>
-										<p class="arrival-review pull-right">
-											<a href="/Products"><span class="lnr lnr-frame-expand"></span></a>
-											<!-- <span class="lnr lnr-heart"></span> -->
-										</p>
-									</div>
-								</div>
-								<h4><a href="#">Saitama Print Shoes</a></h4>
-								<p class="arrival-product-price">RS. 2100</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-4">
-							<div class="single-new-arrival">
-								<div class="single-new-arrival-bg">
-									<img src="{{ url_for('static',filename='images/collection/arrivals7.png') }}" alt="new-arrivals images">
-									<div class="single-new-arrival-bg-overlay"></div>
-									<!-- <div class="sale bg-2">
-										<p>sale</p>
-									</div> -->
-									<div class="new-arrival-cart">
-										<p>
-											<span class="lnr lnr-cart"></span>
-											<a href="#">add <span>to </span> cart</a>
-										</p>
-										<p class="arrival-review pull-right">
-											<!-- <span class="lnr lnr-heart"></span> -->
-											<span class="lnr lnr-frame-expand"></span>
-										</p>
-									</div>
-								</div>
-								<h4><a href="#">Baki Mobile Cover</a></h4>
-								<p class="arrival-product-price">RS. 200</p>
-							</div>
-						</div>
-						<div class="col-md-3 col-sm-4">
-							<div class="single-new-arrival">
-								<div class="single-new-arrival-bg">
-									<img src="{{ url_for('static',filename='images/collection/arrivals8.png') }}" alt="new-arrivals images">
-									<div class="single-new-arrival-bg-overlay"></div>
-									<div class="new-arrival-cart">
-										<p>
-											<span class="lnr lnr-cart"></span>
-											<a href="#">add <span>to </span> cart</a>
-										</p>
-										<p class="arrival-review pull-right">
-											<!-- <span class="lnr lnr-heart"></span> -->
-											<span class="lnr lnr-frame-expand"></span>
-										</p>
-									</div>
-								</div>
-								<h4><a href="#">Kaolan Laptop Cover</a></h4>
-								<p class="arrival-product-price">RS. 500</p>
-							</div>
-						</div>
+							{%endfor%}
+							{%endif%}
+							
 					</div>
 				</div>
 			</div><!--/.container-->
