@@ -85,6 +85,10 @@ body{
     border-radius: 25px;
 }
 
+.alert-warning{
+    color: red;
+}
+
 .form .input-field{
     position: relative;
     height: 50px;

@@ -14,7 +14,9 @@
 
      <!-- for icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='/bootstraps/bootstrap.min.css') }}">
+
     <!-- For favicon png -->
 	<link rel="shortcut icon" type="image/icon" href="{{ url_for('static',filename='/logo/favicon.png') }}">
 
@@ -25,42 +27,60 @@
             <!-- Registration Form -->
             <div class="form signup">
                 <span class="title">Registration</span>
-
+                {%with messages = get_flashed_messages(with_categories=true)%}
                 <form method="POST", action="">
                     {{form_signup.hidden_tag()}}
                     <div class="input-field">
-                        {{form_signup.username(placeholder="Enter your name")}}
+                        {{form_signup.username(placeholder="Enter your username")}}
                         <i class="uil uil-user"></i>
                     </div>
+                    
+                    {%if messages%}
+                    <!--  -->
+                    {%for category, msg in messages%}
+                    <!--  -->
+                    {%if category == 'Username-Used'%}
+                    <span class="text-danger">{{msg}}</span>
+                    {%endif%}
+                    {%endfor%}
+                    <!--  -->
+                    {%endif%}
                     <div class="input-field">
                         {{form_signup.email(placeholder="Enter your email")}}
-                        <!-- <input type="text" placeholder="Enter your email" required> -->
                         <i class="uil uil-envelope icon"></i>
                     </div>
+                    {% if form_signup.email.errors %}
+                        {% for error in form_login.errors %}
+                            <span class="text-danger">Please enter a valid {{error}}</span>
+                        {% endfor %}
+                    {% endif %}
+                    {%if messages%}
+                    <!--  -->
+                    {%for category, msg in messages%}
+                    <!--  -->
+                    {%if category == 'Email-Used'%}
+                    <span class="text-danger">{{msg}}</span>
+                    {%endif%}
+                    {%endfor%}
+                    <!--  -->
+                    {%endif%}
                     <div class="input-field">
                         {{form_signup.password(class="password",placeholder="Create a password")}}
-                        <!-- <input type="password" class="password" placeholder="Create a password" required> -->
                         <i class="uil uil-lock icon"></i>
                     </div>
                     <div class="input-field">
                         {{form_signup.cpassword(class="password",placeholder="Confirm a password")}}
-                        <!-- <input type="password" class="password" placeholder="Confirm a password" required> -->
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>
 
-                    <!-- <div class="checkbox-text">
-                        <div class="checkbox-content">
-                            <input type="checkbox" id="termCon">
-                            <label for="termCon" class="text">I accept all terms and conditions</label>
-                        </div>
-                    </div> -->
+                    
 
                     <div class="input-field button">
                         {{form_signup.submit(value="Signup")}}
                     </div>
                 </form>
-
+                {%endwith%}
                 <div class="login-signup">
                     <span class="text">Already a member?
                         <a href="/login" class="text login-link">Login Now</a>
@@ -70,6 +90,8 @@
         </div>
     </div>
     <script src="{{ url_for('static',filename='/js/login.js') }}"></script>
+    <script src="{{ url_for('static',filename='/js/bootstrap.min.js') }}"></script>
+
 </body>
 </html>
 

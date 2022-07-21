@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Products Description</title>
-    <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+    <link rel="shortcut icon" type="image/icon" href="{{ url_for('static',filename='/logo/favicon.png') }}">
 
-    <link rel="stylesheet" href="/assets/css/products.css">
+
+    <!-- <link rel="stylesheet" href="/assets/css/products.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/Products/products.css') }}">
     <!-- Vendor Script -->
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -21,7 +23,7 @@
 
     <div class="container">
         <div class="imgBx">
-            <img src="/assets/images/slider/saitama.png" alt="Saitama shoes">
+            <img src="{{ url_for('static',filename='images/slider/saitama.png') }}" alt="Saitama shoes">
         </div>
         <div class="details">
             <div class="content">

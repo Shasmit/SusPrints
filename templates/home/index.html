@@ -13,29 +13,46 @@
         <title>SusPrints | Home</title>
 
         <!-- For favicon png -->
-		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+		<!-- <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/> -->
+		<link rel="shortcut icon" type="image/icon" href="{{ url_for('static',filename='/logo/favicon.png') }}">
+
        
         <!--font-awesome.min.css-->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <!-- <link rel="stylesheet" href="assets/css/font-awesome.min.css"> -->
+		<link rel="stylesheet" href="{{ url_for('static',filename='/css/font-awesome.min.css') }}">
+
 
         <!--linear icon css-->
-		<link rel="stylesheet" href="assets/css/linearicons.css">
+		<link rel="stylesheet" href="https://unpkg.com/linearicons@1.0.2/dist/web-font/style.css">
+		<!-- <link rel="stylesheet" href="assets/css/linearicons.css"> -->
+		<link rel="stylesheet" href="{{ url_for('static',filename='/css/linearicons.css') }}">
+
 
 		<!--animate.css-->
-        <link rel="stylesheet" href="assets/css/animate.css">
+        <!-- <link rel="stylesheet" href="assets/css/animate.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='/css/animate.css') }}">
+
 
         <!--owl.carousel.css-->
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-		<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+        <!-- <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/css/owl.theme.default.min.css"> -->
+		<link rel="stylesheet" href="{{ url_for('static',filename='/css/owl.carousel.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static',filename='/css/owl.theme.default.min.css') }}">
 		
         <!--bootstrap.min.css-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='/bootstraps/bootstrap.min.css') }}">
+
 		
 		<!-- bootsnav -->
-		<link rel="stylesheet" href="assets/css/bootsnav.css" >	
+		<!-- <link rel="stylesheet" href="assets/css/bootsnav.css" >	 -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='/bootstraps/bootsnav.css') }}">
+
         
         <!--style.css-->
-        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static',filename='/css/style.css') }}">
         
         
         
@@ -81,7 +98,7 @@
 														<span class="lnr lnr-plus-circle"></span>
 														add <span>to</span> cart
 													</button>
-													<button class="btn-cart welcome-add-cart welcome-more-info" onclick="location.href='products.html'">
+													<button class="btn-cart welcome-add-cart welcome-more-info" onclick="window.location.href='/Products'">
 														more info
 													</button>
 												</div><!--/.welcome-hero-txt-->
@@ -90,7 +107,7 @@
 										<div class="col-sm-5">
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-img">
-													<img src="assets/images/slider/saitama.png" alt="slider image">
+													<img src="{{ url_for('static',filename='images/slider/saitama.png') }}" alt="slider image">
 												</div><!--/.welcome-hero-txt-->
 											</div><!--/.single-welcome-hero-->
 										</div><!--/.col-->
@@ -124,7 +141,7 @@
 														<span class="lnr lnr-plus-circle"></span>
 														add <span>to</span> cart
 													</button>
-													<button class="btn-cart welcome-add-cart welcome-more-info" onclick="window.location.href='#'">
+													<button class="btn-cart welcome-add-cart welcome-more-info" onclick="window.location.href='/Products'">
 														more info
 													</button>
 												</div><!--/.welcome-hero-txt-->
@@ -133,7 +150,7 @@
 										<div class="col-sm-5">
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-img">
-													<img src="assets/images/slider/saitama2.png" alt="slider image">
+													<img src="{{ url_for('static',filename='images/slider/saitama2.png') }}" alt="slider image">
 												</div><!--/.welcome-hero-txt-->
 											</div><!--/.single-welcome-hero-->
 										</div><!--/.col-->
@@ -167,7 +184,7 @@
 														<span class="lnr lnr-plus-circle"></span>
 														add <span>to</span> cart
 													</button>
-													<button class="btn-cart welcome-add-cart welcome-more-info" onclick="window.location.href='#'">
+													<button class="btn-cart welcome-add-cart welcome-more-info" onclick="window.location.href='/Products'">
 														more info
 													</button>
 												</div><!--/.welcome-hero-txt-->
@@ -176,7 +193,7 @@
 										<div class="col-sm-5">
 											<div class="single-welcome-hero">
 												<div class="welcome-hero-img">
-													<img src="assets/images/slider/saitama3.png" alt="slider image">
+													<img src="{{ url_for('static',filename='images/slider/saitama3.png') }}" alt="slider image">
 												</div><!--/.welcome-hero-txt-->
 											</div><!--/.single-welcome-hero-->
 										</div><!--/.col-->
@@ -218,9 +235,9 @@
 				                	<li class="nav-user">
 				                		<a><span class="lnr lnr-user"></span></a>
 										<ul class="nav-user-ul">
-											<li><a href="#">Siddhartha Ratna Shakya </a></li>
+											<li><a href="#">{{current_user.username}} </a></li>
 											<hr>
-											<li><a href="#"> <span class="lnr lnr-exit"></span> Logout</a></li>
+											<li><a href="/Logout"> <span class="lnr lnr-exit"></span> Logout</a></li>
 										</ul>
 				                	</li>
 				                    <li class="dropdown">
@@ -230,7 +247,7 @@
 				                        </a>
 				                        <ul class="dropdown-menu cart-list s-cate">
 				                            <li class="single-cart-list">
-				                                <a href="#" class="photo"><img src="assets/images/collection/arrivals1.png" class="cart-thumb" alt="image" /></a>
+				                                <a href="#" class="photo"><img src="{{ url_for('static',filename='images/collection/arrivals1.png') }}" class="cart-thumb" alt="image" /></a>
 				                                <div class="cart-list-txt">
 				                                	<h6><a href="#">Zoro Print <br> Hoodie</a></h6>
 				                                	<p>1 x - <span class="price">RS. 1050</span></p>
@@ -240,7 +257,7 @@
 				                                </div><!--/.cart-close-->
 				                            </li><!--/.single-cart-list -->
 				                            <li class="single-cart-list">
-				                                <a href="#" class="photo"><img src="assets/images/collection/arrivals2.png" class="cart-thumb" alt="image" /></a>
+				                                <a href="#" class="photo"><img src="{{ url_for('static',filename='images/collection/arrivals2.png') }}" class="cart-thumb" alt="image" /></a>
 				                                <div class="cart-list-txt">
 				                                	<h6><a href="#">SpyxFamily <br> T-shirt</a></h6>
 				                                	<p>1 x - <span class="price">RS. 750</span></p>
@@ -250,7 +267,7 @@
 				                                </div><!--/.cart-close-->
 				                            </li><!--/.single-cart-list -->
 				                            <li class="single-cart-list">
-				                                <a href="#" class="photo"><img src="assets/images/collection/arrivals3.png" class="cart-thumb" alt="image" /></a>
+				                                <a href="#" class="photo"><img src="{{ url_for('static',filename='images/collection/arrivals3.png') }}" class="cart-thumb" alt="image" /></a>
 				                                <div class="cart-list-txt">
 				                                	<h6><a href="#">Tanjiro's <br> Haori</a></h6>
 				                                	<p>1 x - <span class="price">RS. 800</span></p>
@@ -285,8 +302,8 @@
 				                    <li class=" scroll active"><a href="#home">home</a></li>
 				                    <li class="scroll"><a href="#new-arrivals">new arrival</a></li>
 				                    <!-- <li class="scroll"><a href="#blog">blog</a></li> -->
-				                    <li><a href="/profile.html">profile</a></li>
-									<li><a href="/landingpage.html">login</a></li>
+				                    <li><a href="/Profile">profile</a></li>
+									<!-- <li><a href="/landingpage.html">login</a></li> -->
 				                </ul><!--/.nav -->
 				            </div><!-- /.navbar-collapse -->
 				        </div><!--/.container-->
@@ -313,7 +330,7 @@
 						<div class="col-md-3 col-sm-4">
 							<div class="single-new-arrival">
 								<div class="single-new-arrival-bg">
-									<img src="assets/images/collection/arrivals1.png" alt="new-arrivals images">
+									<img src="{{ url_for('static',filename='images/collection/arrivals1.png') }}" alt="new-arrivals images">
 									<div class="single-new-arrival-bg-overlay"></div>
 									<!-- <div class="sale bg-1">
 										<p>sale</p>
@@ -336,7 +353,7 @@
 						<div class="col-md-3 col-sm-4">
 							<div class="single-new-arrival">
 								<div class="single-new-arrival-bg">
-									<img src="assets/images/collection/arrivals2.png" alt="new-arrivals images">
+									<img src="{{ url_for('static',filename='images/collection/arrivals2.png') }}" alt="new-arrivals images">
 									<div class="single-new-arrival-bg-overlay"></div>
 									<!-- <div class="sale bg-2">
 										<p>sale</p>
@@ -359,7 +376,7 @@
 						<div class="col-md-3 col-sm-4">
 							<div class="single-new-arrival">
 								<div class="single-new-arrival-bg">
-									<img src="assets/images/collection/arrivals3.png" alt="new-arrivals images">
+									<img src="{{ url_for('static',filename='images/collection/arrivals3.png') }}" alt="new-arrivals images">
 									<div class="single-new-arrival-bg-overlay"></div>
 									<div class="new-arrival-cart">
 										<p>
@@ -379,7 +396,7 @@
 						<div class="col-md-3 col-sm-4">
 							<div class="single-new-arrival">
 								<div class="single-new-arrival-bg">
-									<img src="assets/images/collection/arrivals4.png" alt="new-arrivals images">
+									<img src="{{ url_for('static',filename='images/collection/arrivals4.png') }}" alt="new-arrivals images">
 									<div class="single-new-arrival-bg-overlay"></div>
 									<!-- <div class="sale bg-1">
 										<p>sale</p>
@@ -402,7 +419,7 @@
 						<div class="col-md-3 col-sm-4">
 							<div class="single-new-arrival">
 								<div class="single-new-arrival-bg">
-									<img src="assets/images/collection/arrivals5.png" alt="new-arrivals images">
+									<img src="{{ url_for('static',filename='images/collection/arrivals5.png') }}" alt="new-arrivals images">
 									<div class="single-new-arrival-bg-overlay"></div>
 									<div class="new-arrival-cart">
 										<p>
@@ -422,7 +439,7 @@
 						<div class="col-md-3 col-sm-4">
 							<div class="single-new-arrival">
 								<div class="single-new-arrival-bg">
-									<img src="assets/images/collection/arrivals6.png" alt="new-arrivals images">
+									<img src="{{ url_for('static',filename='images/collection/arrivals6.png') }}" alt="new-arrivals images">
 									<div class="single-new-arrival-bg-overlay"></div>
 									<!-- <div class="sale bg-1">
 										<p>sale</p>
@@ -433,7 +450,7 @@
 											<a href="#">add <span>to </span> cart</a>
 										</p>
 										<p class="arrival-review pull-right">
-											<a href="/products.html"><span class="lnr lnr-frame-expand"></span></a>
+											<a href="/Products"><span class="lnr lnr-frame-expand"></span></a>
 											<!-- <span class="lnr lnr-heart"></span> -->
 										</p>
 									</div>
@@ -445,7 +462,7 @@
 						<div class="col-md-3 col-sm-4">
 							<div class="single-new-arrival">
 								<div class="single-new-arrival-bg">
-									<img src="assets/images/collection/arrivals7.png" alt="new-arrivals images">
+									<img src="{{ url_for('static',filename='images/collection/arrivals7.png') }}" alt="new-arrivals images">
 									<div class="single-new-arrival-bg-overlay"></div>
 									<!-- <div class="sale bg-2">
 										<p>sale</p>
@@ -468,7 +485,7 @@
 						<div class="col-md-3 col-sm-4">
 							<div class="single-new-arrival">
 								<div class="single-new-arrival-bg">
-									<img src="assets/images/collection/arrivals8.png" alt="new-arrivals images">
+									<img src="{{ url_for('static',filename='images/collection/arrivals8.png') }}" alt="new-arrivals images">
 									<div class="single-new-arrival-bg-overlay"></div>
 									<div class="new-arrival-cart">
 										<p>
@@ -506,7 +523,7 @@
 						<a href="#"><i class="fa fa-behance"></i></a>	 -->
 					</div>
 					<p>
-						&copy;copyright. designed and developed by <a href="https://www.themesine.com/">Shasmit Basnet</a>
+						&copy;copyright. designed and developed by <a href="#">Shasmit Basnet</a>
 					</p><!--/p-->
 				</div><!--/.text-center-->
 			</div><!--/.container-->
@@ -522,27 +539,37 @@
 		<!--footer end-->
 
 
-
+		<script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
         <!-- Include all js compiled plugins (below), or include individual files as needed -->
 
-		<script src="assets/js/jquery.js"></script>
+		<!-- <script src="assets/js/jquery.js"></script> -->
+		<script src="{{ url_for('static',filename='/js/jquery.js') }}"></script>
+
         
         <!--modernizr.min.js-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 		
 		<!--bootstrap.min.js-->
-        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- <script src="assets/js/bootstrap.min.js"></script> -->
+		<script src="{{ url_for('static',filename='/js/bootstrap.min.js') }}"></script>
+
 		
 		<!-- bootsnav js -->
-		<script src="assets/js/bootsnav.js"></script>
+		<!-- <script src="assets/js/bootsnav.js"></script> -->
+		<script src="{{ url_for('static',filename='/js/bootsnav.js') }}"></script>
+
 
         <!--owl.carousel.js-->
-        <script src="assets/js/owl.carousel.min.js"></script>
+        <!-- <script src="assets/js/owl.carousel.min.js"></script> -->
+		<script src="{{ url_for('static',filename='/js/owl.carousel.min.js') }}"></script>
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 		
         
         <!--Custom JS-->
-        <script src="assets/js/custom.js"></script>
+        <!-- <script src="assets/js/custom.js"></script> -->
+		<script src="{{ url_for('static',filename='/js/custom.js') }}"></script>
+
 
     </body>
