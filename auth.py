@@ -12,8 +12,8 @@ auth = Blueprint("auth", __name__)
 @auth.route("/register", methods=["GET", "POST"])
 def Register():
     form_signup = RegistrationForm()
-    if current_user.is_authenticated:
-        return redirect(url_for("views.home"))
+    # if current_user.is_authenticated:
+    #     return redirect(url_for("views.home"))
     if request.method == "POST":
         if form_signup.validate_on_submit():
             if User.query.filter_by(email=form_signup.email.data).first():
