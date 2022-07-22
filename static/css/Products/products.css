@@ -11,6 +11,10 @@ body {
     background: #64C9CF;
 }
 
+.Hidden{
+    display: none;
+}
+
 .container {
     position: relative;
     display: flex;
@@ -91,7 +95,7 @@ body {
 }
 
 
-.container .details button {
+.container .details .buy_button {
     background: #000;
     cursor: pointer;
     color: #fff;

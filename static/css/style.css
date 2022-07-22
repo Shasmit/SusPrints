@@ -678,12 +678,17 @@ ul.cart-list>li.total {
     visibility: hidden;
 }
 
-.new-arrival-cart p {
+/* .new-arrival-cart p {
     float: left;
     margin-left: 20px;
     color: #fff;
     font-size: 12px;
     line-height: 3;
+} */
+
+.new-arrival-cart .loll{
+    margin-left: 0 auto;
+    line-height: 0;
 }
 
 .new-arrival-cart p a {
@@ -692,16 +697,28 @@ ul.cart-list>li.total {
     font-size: 12px;
 }
 
-.new-arrival-cart p span.lnr.lnr-cart {
-    margin-right: 10px;
+.new-arrival-cart .submitt{
+    background-color: transparent;
+    border: none;
+    font-size: 10px;
+    position: relative;
+    bottom :3px;
+}
+
+.lolcart{
+    position: relative;
+    right: 60px;
+    top: 10px;
 }
 
 .new-arrival-cart p span {
     text-transform: lowercase;
 }
 
-p.arrival-review span {
-    margin-right: 15px;
+.arrival-review span {
+    position: relative;
+    margin-right: 10px;
+    bottom: 20px;
 }
 
 .single-new-arrival-bg:hover .new-arrival-cart {

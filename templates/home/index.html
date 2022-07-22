@@ -96,14 +96,15 @@
 															<del> Rs. {{mostselling[0].price}}</del>
 														</p>
 													</div>
-													<button class="btn-cart welcome-add-cart" onclick="window.location.href='#'">
-														<span class="lnr lnr-plus-circle"></span>
+													<button>
 														<form action="/addcart" method="POST">
+											
 															{{form.hidden_tag()}}
 															{{form.item_id(class="Hidden",value=mostselling[0].id)}}
 															{{form.user_id(class="Hidden",value=current_user.id)}}
 															{{form.type(class="Hidden",value=mostselling[0].productType)}}
-															{{form.submit(value="Add to Cart",class="btn btn-primary")}}
+															{{form.submit(value="Add to Cart",class="btn-cart welcome-add-cart")}}
+															
 														</form>
 													</button>
 													<button> 
@@ -145,9 +146,16 @@
 															<del>Rs. {{mostselling[1].price}}</del>
 														</p>
 													</div>
-													<button class="btn-cart welcome-add-cart" onclick="window.location.href='#'">
-														<span class="lnr lnr-plus-circle"></span>
-														add <span>to</span> cart
+													<button>
+														<form action="/addcart" method="POST">
+											
+															{{form.hidden_tag()}}
+															{{form.item_id(class="Hidden",value=mostselling[1].id)}}
+															{{form.user_id(class="Hidden",value=current_user.id)}}
+															{{form.type(class="Hidden",value=mostselling[1].productType)}}
+															{{form.submit(value="Add to Cart",class="btn-cart welcome-add-cart")}}
+															
+														</form>
 													</button>
 													<button> 
 														<a href="/MostSelling/{{mostselling[1].title}}" class="btn-cart welcome-add-cart welcome-more-info">more info</a>	
@@ -190,9 +198,16 @@
 															<del>RS. {{mostselling[2].price}}</del>
 														</p>
 													</div>
-													<button class="btn-cart welcome-add-cart" onclick="window.location.href='#'">
-														<span class="lnr lnr-plus-circle"></span>
-														add <span>to</span> cart
+													<button>
+														<form action="/addcart" method="POST">
+											
+															{{form.hidden_tag()}}
+															{{form.item_id(class="Hidden",value=mostselling[2].id)}}
+															{{form.user_id(class="Hidden",value=current_user.id)}}
+															{{form.type(class="Hidden",value=mostselling[2].productType)}}
+															{{form.submit(value="Add to Cart",class="btn-cart welcome-add-cart")}}
+															
+														</form>
 													</button>
 													<button> 
 														<a href="/MostSelling/{{mostselling[2].title}}" class="btn-cart welcome-add-cart welcome-more-info">more info</a>	
@@ -256,7 +271,6 @@
 				                    <li class="dropdown">
 				                        <a href="/cart" class="dropdown-toggle" data-toggle="dropdown" >
 				                            <span class="lnr lnr-cart"></span>
-											
 				                        </a>
 				                        
 				                    </li><!--/.dropdown-->
@@ -321,14 +335,17 @@
 										<p>sale</p>
 									</div> -->
 									<div class="new-arrival-cart">
-										<p>
-											<span class="lnr lnr-cart"></span>
+										<p class="loll">
+											
 											<form action="/addcart" method="POST">
-												{{form.hidden_tag()}}
-												{{form.item_id(class="Hidden",value=product.id)}}
-												{{form.user_id(class="Hidden",value=current_user.id)}}
-												{{form.type(class="Hidden",value=product.productType)}}
-												{{form.submit(value="Add to Cart",class="btn btn-primary")}}
+											
+												<span class="lnr lnr-cart lolcart">
+													{{form.hidden_tag()}}
+													{{form.item_id(class="Hidden",value=product.id)}}
+													{{form.user_id(class="Hidden",value=current_user.id)}}
+													{{form.type(class="Hidden",value=product.productType)}}
+													{{form.submit(value="Add to Cart",class="submitt")}}
+												</span>
 											</form>
 										</p>
 										<p class="arrival-review pull-right">
@@ -337,7 +354,7 @@
 										</p>
 									</div>
 								</div>
-								<h4><a href="#">{{product.title}}</a></h4>
+								<h4><a href="/NewArrivals/{{product.title}}">{{product.title}}</a></h4>
 								<p class="arrival-product-price">Rs.{{product.price}}</p>
 							</div>
 						</div>

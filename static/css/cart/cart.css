@@ -8,11 +8,18 @@
     font-family: 'Nunito', sans-serif;
 }
 
+html{
+    background-color: #A7D0CD;
+}
+
+body{
+    background-color: #A7D0CD;
+    height: 100%;
+}
 
 .background-custom {
     background: #A7D0CD;
-    
-    }
+}
 
 .confirm-payment{
     text-decoration: none;
@@ -21,6 +28,10 @@
     padding: 10px 15px;
     border: none;
     border-radius: 10px;
+}
+
+.Hidden{
+    display: none;
 }
 
 .confirm-payment a{
