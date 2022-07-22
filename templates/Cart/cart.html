@@ -25,84 +25,57 @@
                     <p class="lead fw-normal mb-0" style="color: #64C9CF;">Receipt</p>
                     <!-- <p class="small text-muted mb-0">Receipt Voucher : 1KAU9-84UIL</p> -->
                   </div>
-                  <div class="card shadow-0 border mb-3">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-md-2">
-                          <img src="{{ url_for('static',filename='images/collection/arrivals1.png') }}"
-                            class="img-fluid" alt="Phone">
-                        </div>
-                        <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p class="text-muted mb-0">Zoro Print Hoodie</p>
-                        </div>
-                        <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p class="text-muted mb-0 small">Size : XL</p>
-                        </div>
-                        <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p class="text-muted mb-0 small">Qty: 1</p>
-                        </div>
-                        <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p class="text-muted mb-0 small">RS. 1050</p>
-                        </div>
-                      </div>
-                      
-                    </div>
-                  </div>
+                  {%if items != []%}
+                  {%for item in items%}
+                    <div class="card shadow-0 border mb-3">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-2">
+                            <img src="{{ url_for('static',filename='Assets/userimage/'+item.image) }}"
+                              class="img-fluid" alt="Phone">
+                          </div>
+                          <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                            <p class="text-muted mb-0">{{item.title}}</p>
+                          </div>
 
-                  <div class="card shadow-0 border mb-3">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-md-2">
-                          <img src="{{ url_for('static',filename='images/collection/arrivals2.png') }}"
-                            class="img-fluid" alt="Phone">
+                          <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                            <p class="text-muted mb-0 small">
+                              {%if item.productType=="Most Selling Collection"%}
+                              
+                              {{item.discount}}
+                              {%else%}
+                              {{item.price}}
+                              {%endif%}
+                            
+                            </p>
+                          </div>
+                          <div>
+                            <form action="/cart" method="POST">
+                              {{form.hidden_tag()}}
+                              {{form.item_id(class = "Hidden", value = item.id)}}
+                              {{form.user_id(class = "Hidden", value = current_user.id)}}
+                              {{form.type(class = "Hidden", value = item.productType)}}
+                              {{form.submit(class = "btn btn-sm btn-outline-danger", value = "Remove")}}
+                            </form>
+                          </div>
                         </div>
-                        <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p class="text-muted mb-0">SpyxFamily T-Shirt</p>
-                        </div>
-                        <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p class="text-muted mb-0 small">Size : XXL</p>
-                        </div>
-                        <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p class="text-muted mb-0 small">Qty: 1</p>
-                        </div>
-                        <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p class="text-muted mb-0 small">RS. 750</p>
-                        </div>
+                        
                       </div>
-                      
                     </div>
-                  </div>
-
-                  <div class="card shadow-0 border mb-3">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-md-2">
-                          <img src="{{ url_for('static',filename='images/collection/arrivals3.png') }}"
-                            class="img-fluid" alt="Phone">
-                        </div>
-                        <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p class="text-muted mb-0">Tanjiro's Haori</p>
-                        </div>
-                        <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p class="text-muted mb-0 small">Size : L</p>
-                        </div>
-                        <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p class="text-muted mb-0 small">Qty: 1</p>
-                        </div>
-                        <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p class="text-muted mb-0 small">RS. 800</p>
-                        </div>
-                      </div>
-                      
-                    </div>
-                  </div>
+                  {%endfor%}
+                  {%else%}
+                  <h1>NO items</h1>
+                  {%endif%}
       
                   <div class="d-flex justify-content-between pt-2">
                     <p class="fw-bold mb-0">Order Details</p>
                   </div>
 
                   <div class="d-flex justify-content-between pt-2">
-                    <p class="text-muted mb-0"><span class="fw-bold me-4">Total :</span> RS. 2600</p>
+                    
+                    <p class="text-muted mb-0"><span class="fw-bold me-4">Total :</span> RS.
+                      {{total}}</p>
+                    </p>
                   </div>
       
                   <div class="d-flex justify-content-between pt-2">

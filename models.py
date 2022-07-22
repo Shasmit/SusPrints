@@ -1,3 +1,4 @@
+from enum import unique
 from __init__ import db,login_manager
 from flask_login import UserMixin
 
@@ -11,6 +12,8 @@ class user(db.Model, UserMixin):
     username = db.Column(db.String(20), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(60), nullable=False)
+    number = db.Column(db.String(10), nullable=True, unique=True)
+    address = db.Column(db.String(120), nullable=True)
     def __repr__(self):
         return f"User('{self.username}', '{self.email}')"
 
@@ -37,3 +40,13 @@ class NewArrivals(db.Model):
     def __repr__(self):
         return f"NewArrivals('{self.title}', '{self.description}', '{self.image}', '{self.price}', '{self.productType}')"
 
+class AddCart(db.Model):
+    __tablename__ = "addcart"
+    id = db.Column(db.Integer, primary_key=True)
+    item_id = db.Column(db.Integer, nullable=False)
+    user_id = db.Column(db.Integer, nullable=False)
+    type = db.Column(db.String(50), nullable=False)
+
+
+    def __repr__(self):
+        return f"AddCart('{self.item_id}')"

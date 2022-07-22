@@ -25,10 +25,11 @@
         <div class="imgBx">
             <img src="{{ url_for('static',filename='Assets/userimage/'+desc.image) }}" alt="Saitama shoes">
         </div>
+        
         <div class="details">
             <div class="content">
                 <h2>{{desc.title}}<br>
-                    <span>Most selling collection</span>
+                    <span>{{desc.productType}}</span>
                 </h2>
                 <p>
                     {{desc.description}}

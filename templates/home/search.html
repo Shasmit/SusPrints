@@ -1,0 +1,55 @@
+{% extends "home/index.html" %}
+{% block HomePage %}
+{% endblock HomePage %}
+{% block search %}
+<!--new-arrivals start -->
+<section id="new-arrivals" class="new-arrivals">
+    <div class="container">
+        <div class="section-header">
+            <h2>new arrivals</h2>
+        </div><!--/.section-header-->
+        <div class="new-arrivals-content">
+            <div class="row">
+                {%if newarrival == []%}
+                    <h1>No Products</h1>
+                    {%else%}
+                    {%for product in result%}
+                <div class="col-md-3 col-sm-4">
+                    <div class="single-new-arrival">
+                        <div class="single-new-arrival-bg">
+                            <img src="{{ url_for('static',filename='Assets/userimage/'+product.image) }}" alt="new-arrivals images">
+                            <div class="single-new-arrival-bg-overlay"></div>
+                            <!-- <div class="sale bg-1">
+                                <p>sale</p>
+                            </div> -->
+                            <div class="new-arrival-cart">
+                                <p>
+                                    <span class="lnr lnr-cart"></span>
+                                    <a href="#">add <span>to </span> cart</a>
+                                </p>
+                                <p class="arrival-review pull-right">
+                                    <!-- <span class="lnr lnr-heart"></span> -->
+                                    {%if product.productType == 'Most Selling Collection'%}
+                                    
+                                    <a href="/MostSelling/{{product.title}}"><span class="lnr lnr-frame-expand"></span></a>
+                                    {%else%}
+                                    <a href="/NewArrivals/{{product.title}}"><span class="lnr lnr-frame-expand"></span></a>
+                                    {%endif%}
+                                    
+                                </p>
+                            </div>
+                        </div>
+                        <h4><a href="#">{{product.title}}</a></h4>
+                        <p class="arrival-product-price">Rs.{{product.price}}</p>
+                    </div>
+                </div>
+                    {%endfor%}
+                    {%endif%}
+                    
+            </div>
+        </div>
+    </div><!--/.container-->
+
+</section><!--/.new-arrivals-->
+<!--new-arrivals end -->
+{% endblock search %}

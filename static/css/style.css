@@ -11,6 +11,10 @@
     box-sizing: border-box;
 }
 
+.Hidden{
+    display: none !important;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;

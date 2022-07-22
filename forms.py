@@ -1,6 +1,6 @@
 from itertools import product
 from flask_wtf import FlaskForm
-from wtforms import FileField, StringField, PasswordField, SubmitField, BooleanField, TextAreaField
+from wtforms import FileField, IntegerField, StringField, PasswordField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from flask_wtf.file import FileRequired, FileAllowed
 
@@ -25,4 +25,14 @@ class ProductForm(FlaskForm):
     productType = StringField('Product Type')
     discountPrice = StringField('Discount Price')
 
+class AddCarts(FlaskForm):
+    item_id = IntegerField('Item ID',validators=[DataRequired()])
+    user_id = IntegerField('user ID',validators=[DataRequired()])
+    type = StringField('Type',validators=[DataRequired()])
+    submit = SubmitField('Add to Cart')
 
+class DeleteCart(FlaskForm):
+    item_id = IntegerField('Item ID',validators=[DataRequired()])
+    user_id = IntegerField('user ID',validators=[DataRequired()])
+    type = StringField('Type',validators=[DataRequired()])
+    submit = SubmitField('Add to Cart')

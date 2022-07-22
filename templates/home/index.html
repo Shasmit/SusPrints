@@ -60,6 +60,7 @@
     </head>
 
     <body>
+		{% block HomePage %}
         <!--welcome-hero start -->
 		<header id="home" class="welcome-hero">
 
@@ -97,7 +98,13 @@
 													</div>
 													<button class="btn-cart welcome-add-cart" onclick="window.location.href='#'">
 														<span class="lnr lnr-plus-circle"></span>
-														add <span>to</span> cart
+														<form action="/addcart" method="POST">
+															{{form.hidden_tag()}}
+															{{form.item_id(class="Hidden",value=mostselling[0].id)}}
+															{{form.user_id(class="Hidden",value=current_user.id)}}
+															{{form.type(class="Hidden",value=mostselling[0].productType)}}
+															{{form.submit(value="Add to Cart",class="btn btn-primary")}}
+														</form>
 													</button>
 													<button> 
 														<a href="/MostSelling/{{mostselling[0].title}}" class="btn-cart welcome-add-cart welcome-more-info">more info</a>	
@@ -221,7 +228,10 @@
 				            <div class="container">
 				                <div class="input-group">
 				                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
-				                    <input type="text" class="form-control" placeholder="Search">
+									<form action="/search" method="POST">
+										<input type="text" class="form-control" placeholder="Search" name="search">
+										<button type="submit"></button>
+									</form>
 				                    <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
 				                </div>
 				            </div>
@@ -244,48 +254,14 @@
 										</ul>
 				                	</li>
 				                    <li class="dropdown">
-				                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+				                        <a href="/cart" class="dropdown-toggle" data-toggle="dropdown" >
 				                            <span class="lnr lnr-cart"></span>
-											<span class="badge badge-bg-1">2</span>
+											
 				                        </a>
-				                        <ul class="dropdown-menu cart-list s-cate">
-				                            <li class="single-cart-list">
-				                                <a href="#" class="photo"><img src="{{ url_for('static',filename='images/collection/arrivals1.png') }}" class="cart-thumb" alt="image" /></a>
-				                                <div class="cart-list-txt">
-				                                	<h6><a href="#">Zoro Print <br> Hoodie</a></h6>
-				                                	<p>1 x - <span class="price">RS. 1050</span></p>
-				                                </div><!--/.cart-list-txt-->
-				                                <div class="cart-close">
-				                                	<span class="lnr lnr-cross"></span>
-				                                </div><!--/.cart-close-->
-				                            </li><!--/.single-cart-list -->
-				                            <li class="single-cart-list">
-				                                <a href="#" class="photo"><img src="{{ url_for('static',filename='images/collection/arrivals2.png') }}" class="cart-thumb" alt="image" /></a>
-				                                <div class="cart-list-txt">
-				                                	<h6><a href="#">SpyxFamily <br> T-shirt</a></h6>
-				                                	<p>1 x - <span class="price">RS. 750</span></p>
-				                                </div><!--/.cart-list-txt-->
-				                                <div class="cart-close">
-				                                	<span class="lnr lnr-cross"></span>
-				                                </div><!--/.cart-close-->
-				                            </li><!--/.single-cart-list -->
-				                            <li class="single-cart-list">
-				                                <a href="#" class="photo"><img src="{{ url_for('static',filename='images/collection/arrivals3.png') }}" class="cart-thumb" alt="image" /></a>
-				                                <div class="cart-list-txt">
-				                                	<h6><a href="#">Tanjiro's <br> Haori</a></h6>
-				                                	<p>1 x - <span class="price">RS. 800</span></p>
-				                                </div><!--/.cart-list-txt-->
-				                                <div class="cart-close">
-				                                	<span class="lnr lnr-cross"></span>
-				                                </div><!--/.cart-close-->
-				                            </li><!--/.single-cart-list -->
-				                            <li class="total">
-				                                <span>Total: $0.00</span>
-				                                <button class="btn-cart pull-right"><a href="/Cart"> view cart</a></button>
-				                            </li>
-				                        </ul>
+				                        
 				                    </li><!--/.dropdown-->
 				                </ul>
+
 				            </div><!--/.attr-nav-->
 				            <!-- End Atribute Navigation -->
 
@@ -327,6 +303,7 @@
 			<div class="container">
 				<div class="section-header">
 					<h2>new arrivals</h2>
+
 				</div><!--/.section-header-->
 				<div class="new-arrivals-content">
 					<div class="row">
@@ -334,6 +311,7 @@
 							<h1>No Products</h1>
 							{%else%}
 							{%for product in newarrival%}
+							
 						<div class="col-md-3 col-sm-4">
 							<div class="single-new-arrival">
 								<div class="single-new-arrival-bg">
@@ -345,7 +323,13 @@
 									<div class="new-arrival-cart">
 										<p>
 											<span class="lnr lnr-cart"></span>
-											<a href="#">add <span>to </span> cart</a>
+											<form action="/addcart" method="POST">
+												{{form.hidden_tag()}}
+												{{form.item_id(class="Hidden",value=product.id)}}
+												{{form.user_id(class="Hidden",value=current_user.id)}}
+												{{form.type(class="Hidden",value=product.productType)}}
+												{{form.submit(value="Add to Cart",class="btn btn-primary")}}
+											</form>
 										</p>
 										<p class="arrival-review pull-right">
 											<!-- <span class="lnr lnr-heart"></span> -->
@@ -429,5 +413,7 @@
         <!-- <script src="assets/js/custom.js"></script> -->
 		<script src="{{ url_for('static',filename='/js/custom.js') }}"></script>
 
-
+	{% endblock HomePage %}
+	{% block search %}
+	{% endblock search %}
     </body>
