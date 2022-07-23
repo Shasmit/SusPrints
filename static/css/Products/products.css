@@ -111,7 +111,7 @@ body {
     float: right;
 }
 
-.details button:hover{
+.details .buy_button:hover{
     background:rgb(44, 42, 42);
     color: white;
 }
