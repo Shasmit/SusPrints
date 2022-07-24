@@ -11,4 +11,3 @@ function getInput(el){
         selectType.style.display = 'none';
     }
 }
-//Expected output: hello
