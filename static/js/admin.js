@@ -11,3 +11,4 @@ function getInput(el){
         selectType.style.display = 'none';
     }
 }
+
